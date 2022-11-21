@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verzy Project's App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <!-- Top Navbar -->
+    <nav class="my-4 sm:my-6 md:my-8">
+      <div
+        class="flex px-4 sm:px-0 items-center justify-between mx-auto sm:max-w-lg md:max-w-xl lg:ml-40 xl:pl-10"
+      >
+        <div
+          class="flex flex-row items-center font-extrabold tracking-wide uppercase text-sm"
+        >
+          <img
+            src="https://telegra.ph/file/d480d0b668a3ace07207b.png"
+            width="25px"
+            alt="logo"
+          />
+          <p style="color: #bebebe">Verzy</p>
+        </div>
+        <!-- nav menu -->
+        <ul
+          class="rounded-full ml-16 hidden sm:flex flex-grow justify-between text-gray-700 text-sm lg:max-w-sm"
+        >
+          <li class="hover:text-gray-900"><a href="#">About Us</a></li>
+          <li class="hover:text-gray-900">
+            <a href="">Legal Information</a>
+          </li>
+          <li class="hover:text-gray-900"><a href="#">FAQ</a></li>
+          <li class="hover:text-gray-900"><a href="#">Support</a></li>
+        </ul>
+        <!-- Hamburger Menu -->
+        <button
+          class="sm:hidden text-gray-600 focus:outline-none text-2xl"
+          id="mobile-nav-btn"
+        >
+          <ion-icon name="menu-outline" data-js="open-icon"></ion-icon>
+          <ion-icon
+            name="close-outline"
+            class="hidden"
+            data-js="close-icon"
+          ></ion-icon>
+        </button>
+      </div>
+      <div
+        class="closed mb-2 mt-4 shadow-md sm:hidden absolute bg-white w-full"
+        id="mobile-nav"
+      >
+        <ul class="flex flex-col text-gray-600 p-5 pb-4">
+          <li class="hover:text-gray-900 mb-3">
+            <a href="#">About Us</a>
+          </li>
+          <li class="hover:text-gray-900 mb-3">
+            <a href="">Legal Information</a>
+          </li>
+          <li class="hover:text-gray-900 mb-3"><a href="#">FAQ</a></li>
+          <li class="hover:text-gray-900 mb-3"><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="lg:mt-16">
+      <!-- Section Wrapper -->
+      <div
+        class="flex flex-col items-center md:justify-between lg:ml-40 lg:flex-row lg:flex-row-reverse"
+      >
+        <!-- Image Section -->
+
+        <!-- Intro Section -->
+        <section class="mt-2 mb-4 xl:pl-10">
+          <div
+            class="text-4xl sm:text-5xl md:text-6xl tracking-wide"
+            style="color: #fff"
+          >
+            <div class="font-light">Verzy Project's</div>
+            <div class="inline-flex flex-col">
+              <div class="font-medium">Create Remotely</div>
+              <div class="box"></div>
+            </div>
+          </div>
+          <div
+            class="mt-6 mb-8 teet text-sm md:text-base font-mont font-medium leading-relaxed"
+          >
+            <p>Create Account Cpanel Remotly using app</p>
+            <p>without login to browser.</p>
+          </div>
+          <div class="flex items-center">
+            <a
+              href="/download"
+              style="background-color: #1e2235"
+              class="px-8 py-3 text-sm text-white rounded-full font-mont"
+            >
+              Download App
+            </a>
+            <a href="//instagram.com/zyfn.dev" class="ml-8 icon-btn">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="//github.com/wffzy" class="ml-4 icon-btn">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- partial -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
