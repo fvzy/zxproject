@@ -9,13 +9,7 @@ app.use(express.urlencoded({
 }))
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-  res.send("./public/index.html");
-});
-app.get("/download", (req, res) => {
-  res.download("./public/Verzy_1.0.apk");
-});
-app.get("/api", (req, res) => {
-  res.send("Mending Follow IG gw:v");
+  res.send("</svelte>");
 });
 
 app.get("/api/create", (req, res) => {
