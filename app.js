@@ -4,6 +4,9 @@ var ZYHM = require("zyhm");
 const app = express();
 const port = 8080;
 
+app.use(express.urlencoded({
+  extended: true
+}))
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.send("./public/index.html");
@@ -22,6 +25,60 @@ app.get("/api/create", (req, res) => {
   let user = req.query.user;
   let domaen = req.query.domain;
   let pass = req.query.pass;
+  if (!whu && !whk && !whh && !user && !domaen && !pass && !peck)
+    return res.send({ status: false });
+  var ZYHMClient = new ZYHM.Client({
+    serverUrl: "https://" + whh + ":2087",
+    remoteAccessKey: whk,
+    username: whu,
+  });
+
+  let peck = req.query.packages;
+  ZYHMClient.createAccount({
+    username: user,
+    password: pass,
+    plan: peck,
+    domain: domaen,
+  }).then(
+    function (success) {
+      let inc = "";
+      if (success.metadata.reason == "Account Creation Ok") {
+        let output_meta = success.metadata.output.raw;
+        var subs = output_meta.substring(
+          output_meta
+            .toString()
+            .indexOf("+===================================+")
+        ); //substr = 'Pick Only Account Info'
+        let ditzz = subs.split("| Language: en")[0];
+        let datas = success.data;
+        inc = {
+          status: true,
+          data: datas,
+          information: ditzz,
+        };
+      } else {
+        inc = success;
+      }
+      console.log(inc);
+      res.json(inc);
+
+      // do something with data
+    },
+    function (error) {
+      console.error(error);
+      res.send(error);
+
+      // do something with data
+    }
+  );
+});
+app.post("/create", (req, res) => {
+  let whu = req.body.user;
+  let whk = req.body.key;
+  let whh = req.body.hostname;
+  let user = req.body.username;
+  let domaen = req.body.domain;
+  let pass = req.body.password;
   if (!whu && !whk && !whh && !user && !domaen && !pass && !peck)
     return res.send({ status: false });
   var ZYHMClient = new ZYHM.Client({
